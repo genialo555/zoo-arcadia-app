@@ -1,0 +1,339 @@
+Arcadia Zoo Web Application Introduction
+
+The Arcadia Zoo Web Application is a web application designed to allow visitors to view animals, their health status, and the services offered by the zoo. The application includes specific areas for administrators, employees, and veterinarians to manage different functionalities. Here is the table of contents:
+
+    Technologies Used
+    Prerequisites
+    Installation
+    Configuration
+    Launching the Application
+    Features
+    Project Structure
+    Contributing
+    License
+    User Stories
+
+Technologies Used
+
+Front-end: HTML5, CSS (Bootstrap), JavaScript
+Back-end: PHP with PDO
+Database: MySQL for the relational database, MongoDB for the NoSQL database
+Deployment: Heroku
+Prerequisites
+
+Before starting, I ensure that I have the following installed on my machine:
+
+    Git
+    PHP
+    Composer
+    MySQL
+    MongoDB
+    Node.js and npm (to manage front-end dependencies)
+
+Installation
+
+I clone the GitHub repository:
+
+sh
+
+git clone https://github.com/username/arcadia-zoo-webapp.git
+cd arcadia-zoo-webapp
+
+I install the back-end dependencies:
+
+sh
+
+composer install
+
+I install the front-end dependencies:
+
+sh
+
+npm install
+
+Configuration
+
+I configure the MySQL database:
+
+    I create a MySQL database.
+    I import the database/schema.sql file to create the necessary tables.
+    I import the database/data.sql file to insert the initial data.
+
+I configure the MongoDB database:
+
+    I start MongoDB.
+    The collection for animal viewing statistics will be created automatically on first use.
+
+I configure the .env file:
+
+    I create a .env file at the root of the project.
+    I add the following configurations:
+
+env
+
+DB_HOST=localhost
+DB_NAME=arcadia_zoo
+DB_USER=root
+DB_PASS=password
+
+MONGO_URI=mongodb://localhost:27017
+MONGO_DB=arcadia_zoo
+
+MAIL_HOST=smtp.example.com
+MAIL_PORT=587
+MAIL_USER=no-reply@example.com
+MAIL_PASS=password
+
+Launching the Application
+
+I start the PHP server:
+
+sh
+
+php -S localhost:8000 -t public
+
+I access the application by opening my browser and navigating to http://localhost:8000.
+Features
+
+Visitors:
+
+    Home: Presentation of the zoo, habitats, services, and visitor reviews.
+    Viewing habitats and animals.
+    Submitting reviews.
+
+Administrators:
+
+    Managing employee and veterinarian accounts.
+    Managing services, schedules, habitats, and animals.
+    Viewing veterinary reports and viewing statistics.
+
+Employees:
+
+    Validating visitor reviews.
+    Managing animal feeding.
+
+Veterinarians:
+
+    Filling out animal health reports.
+    Viewing animals' feeding history.
+
+Project Structure
+
+kotlin
+
+arcadia-zoo-webapp/
+├── database/
+│   ├── schema.sql
+│   ├── data.sql
+├── public/
+│   ├── index.php
+│   ├── css/
+│   ├── js/
+├── src/
+│   ├── controllers/
+│   ├── models/
+│   ├── views/
+├── .env
+├── composer.json
+├── package.json
+├── README.md
+
+Contributing
+
+Contributions are welcome! To contribute:
+
+    Fork the project.
+    Create a branch for my feature (git checkout -b feature/my-feature).
+    Commit my changes (git commit -m 'Add my feature').
+    Push my branch (git push origin feature/my-feature).
+    Open a Pull Request.
+
+User Stories (US) in Detail
+US 1: Home Page
+
+Description: The home page should present the zoo with some images, different habitats, services, and animals, as well as visitor reviews.
+Acceptance Criteria:
+
+    Presentation of the zoo with at least three images.
+    List of habitats (savannah, jungle, swamp).
+    List of services offered by the zoo.
+    Visitor reviews displayed on the page.
+
+US 2: Application Menu
+
+Description: The application menu allows easy navigation between different sections.
+Acceptance Criteria:
+
+    Link to the home page.
+    Link to the services page.
+    Link to the habitats page.
+    Login link for veterinarians, employees, and administrators.
+    Link to the contact page.
+
+US 3: Overview of All Services
+
+Description: A summary page displaying all the services offered by the zoo.
+Acceptance Criteria:
+
+    Display the name and description of each service.
+    Ability to configure services from the admin area.
+
+US 4: Overview of Habitats
+
+Description: A page presenting all habitats with associated animals.
+Acceptance Criteria:
+
+    Display all habitats with image and name.
+    Detail of habitats with description and list of animals.
+    Display animals' health status and veterinary visit details.
+
+US 5: Reviews
+
+Description: Visitors can leave comments that will be validated by employees.
+Acceptance Criteria:
+
+    Form to leave a review with pseudonym and text.
+    Validation system by an employee before publication on the home page.
+
+US 6: Admin Area
+
+Description: Administrators can manage accounts, services, schedules, habitats, and animals.
+Acceptance Criteria:
+
+    Create, update, and delete employee and veterinarian accounts.
+    Manage services, schedules, habitats, and animals.
+    View and filter veterinary reports.
+    Dashboard with animal viewing statistics.
+
+US 7: Employee Area
+
+Description: Employees can validate visitor reviews and manage animal feeding.
+Acceptance Criteria:
+
+    Validate and invalidate reviews.
+    Manage daily animal feeding with date, time, food, and quantity.
+
+US 8: Veterinarian Area
+
+Description: Veterinarians fill out animal health reports and can comment on habitats.
+Acceptance Criteria:
+
+    Fill out reports for each animal.
+    Add comments on habitat conditions.
+    View animals' feeding history.
+
+US 9: Login
+
+Description: Administrators, veterinarians, and employees can log in with a username (email) and password.
+Acceptance Criteria:
+
+    Secure login form.
+    Restricted access to authorized users (administrators, veterinarians, employees).
+
+US 10: Contact
+
+Description: Visitors can contact the zoo via a contact form.
+Acceptance Criteria:
+
+    Contact form with title, description, and email.
+    Send request by email to the zoo.
+    Respond to requests by email from the employee area.
+
+US 11: Habitat Viewing Statistics
+
+Description: Track animal viewings by visitors.
+Acceptance Criteria:
+
+    Increment the view counter each time an animal is clicked.
+    Store viewing data in a NoSQL database.
+    View statistics on the admin dashboard.
+
+Technical Specifications and Security
+
+Security
+
+    Use of HTTPS connections.
+    Password hashing before storage.
+    Protection against CSRF and XSS attacks.
+    Validate user inputs to avoid SQL injections.
+
+Database
+
+    Relational (MySQL):
+        Tables for users, animals, habitats, services, reviews, veterinary reports.
+    NoSQL (MongoDB):
+        Collection for animal viewing statistics.
+
+Front-End
+
+    Use of Bootstrap for responsive design.
+    JavaScript for interactivity.
+    HTML5 and CSS for structure and style.
+
+Back-End
+
+    Use of PHP with PDO for managing interactions with the database.
+    RESTful API for communication between front-end and back-end.
+
+Deployment
+
+    Deployment on Heroku with appropriate configuration for databases and environment variables.
+
+Acceptance Criteria for Each User Story
+US 1: Home Page
+
+    Ensure the presentation of the zoo, images, habitats, services, and visitor reviews.
+    Test the page's responsiveness on different screen sizes.
+
+US 2: Application Menu
+
+    Ensure the menu links work and redirect correctly.
+    Test the menu's accessibility on different devices.
+
+US 3: Overview of All Services
+
+    Ensure services are displayed with their name and description.
+    Test service configuration from the admin area.
+
+US 4: Overview of Habitats
+
+    Ensure habitats are displayed with image and name.
+    Test habitat and animal details display correctly on click.
+    Test the display of animals' health status.
+
+US 5: Reviews
+
+    Ensure visitors can submit reviews and employees can validate/invalidate them.
+    Test the display of validated reviews on the home page.
+
+US 6: Admin Area
+
+    Ensure the admin can create, update, and delete accounts, services, schedules, habitats, and animals.
+    Test viewing and filtering veterinary reports.
+    Verify the dashboard displays animal viewing statistics.
+
+US 7: Employee Area
+
+    Ensure employees can validate/invalidate reviews and manage animal feeding.
+    Test daily feeding entry with date, time, food, and quantity.
+
+US 8: Veterinarian Area
+
+    Ensure veterinarians can fill out reports and comment on habitats.
+    Verify viewing of animals' feeding history.
+
+US 9: Login
+
+    Test the login form for administrators, veterinarians, and employees.
+    Ensure unauthorized users cannot log in.
+
+US 10: Contact
+
+    Ensure the contact form works and sends requests by email.
+    Test responding to requests by email from the employee area.
+
+US 11: Habitat Viewing Statistics
+
+    Ensure the view counter increments each time an animal is clicked.
+    Verify viewing data is correctly stored in the NoSQL database.
+    Test the display of statistics on the admin dashboard.
