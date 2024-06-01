@@ -323,4 +323,4 @@ US 11 : Statistiques sur la consultation des habitats
     Vérification que les données de consultation sont correctement stockées dans la base de données NoSQL.
     Test de l'affichage des statistiques dans le dashboard administrateur.
 
-ChatGPT peut faire des erreurs. Envisagez de vérifier les informations importantes.
+
