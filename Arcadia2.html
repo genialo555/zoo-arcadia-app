@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Arcadia</title>
+<link rel="stylesheet" href="style3_adaptive.css">
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById('topnav');
+        if (menu.style.display === 'block') {
+            menu.style.display = 'none';
+        } else {
+            menu.style.display = 'block';
+        }
+    }
+</script>
+</head>
+<body>
+    <div class="topnav-container">
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <div class="topnav" id="topnav">
+            <a href="#home" class="active">Arcadia</a>
+            <a href="#habitats">Habitats</a>
+            <a href="#restauration">Restauration</a>
+            <a href="#nous-trouver">Nous trouver</a>
+            <a href="#connexion">Connexion</a>
+        </div>
+    </div> 
+
+    <header id="header">
+        <div class="header-image">
+            <img src="imagesbanner.jpg" alt="Banner image">
+            <div class="banner-content">Arcadia - Le Zoo de demain</div>
+        </div>
+    </header>
+
+    <nav id="navbar">
+        <ul>
+            <li><a href="#notre-histoire">Qui sommes nous ?</a></li>
+            <li><a href="#nos-animaux">Nos animaux</a></li>
+            <li><a href="#conservation">Conservation</a></li>
+            <li><a href="#gallerie-photo">Galerie</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#connexion">Connexion</a></li>
+            <li><a href="#plan">Plan du site</a></li>
+        </ul>
+    </nav>
+
+    <section id="notre histoire">
+        <div class="section-content">
+            <h2>Notre histoire</h2>
+            <img src="imageapropos.jpg" alt="À propos image">
+            <p>un sanctuaire dédié à la préservation de la vie sauvage et à l'éducation du public.</p>
+        </div>
+    </section>
+
+    <section id="nos-animaux">
+        <div class="section-content">
+            <h2>Nos animaux</h2>
+            <img src="nos animaux.jpg" alt="Nos animaux image">
+            <p>Découvrez un monde de merveilles sauvages où les pandas roux gambadent parmi les bambous, les manchots se pavanent sur la glace, et les jaguars se préparent à retrouver leur liberté dans les jungles d'Amérique centrale, seulement à l'Arcadia Zoo Moderne</p>
+        </div>
+    </section>
+
+    <section id="conservation">
+        <div class="section-content">
+            <h2>Conservation</h2>
+            <img src="conservation.jpg" alt="Conservation image">
+            <p>Arcadia crée des habitats naturels précis pour chaque espèce, soutient la recherche et la reproduction assistée, et sensibilise le public à travers des programmes éducatifs. En réintroduisant avec succès des espèces en voie de disparition dans leur environnement naturel, Arcadia s'engage à protéger la biodiversité et à inspirer un changement positif pour une coexistence harmonieuse avec la nature..</p>
+        </div>
+    </section>
+
+    <section id="gallerie-photo">
+        <div class="section-content">
+            <h2>Galerie</h2>
+            <img src="gallerie photo.jpg" alt="Galerie image">
+            <p>>Explorez notre galerie immersive où les histoires fascinantes des animaux et les efforts de conservation inspirants prennent vie à l'Arcadia Zoo Moderne</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-content">
+            <h2>Contact</h2>
+            <img src="contact.jpg" alt="Contact image">
+            <p>"Planifiez une expérience enrichissante pour votre groupe avec une visite guidée personnalisée à l'Arcadia Zoo Moderne. Contactez-nous pour organiser une journée d'exploration et d'apprentissage au sein de notre parc dédié à la préservation de la vie sauvage."</p>
+        </div>
+    </section>
+
+    <section id="connexion">
+        <div class="section-content">
+            <h2>Connexion</h2>
+            <img src="connection.jpg" alt="Connexion image">
+            <p>Espace soigneur</p>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="content">
+            <p>&copy; 2024 Arcadia Nature Zoo. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
