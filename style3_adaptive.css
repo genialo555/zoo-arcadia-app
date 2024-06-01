@@ -176,6 +176,6 @@ footer {
 
 @media screen and (max-width: 480px) {
     nav a, .topnav a {
-        font-size: 3vw; /* Adjust font size for very small screens */
+        font-size: 3vw; 
     }
 }
